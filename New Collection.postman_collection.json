@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "e290f26e-1015-43d2-a11c-a4b5a13e71dc",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30737823"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/createFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:5000/createFile",
+				"description": "StartFragment\n\n## Create File Endpoint\n\n- **Endpoint Path:** `/createFile`\n- **HTTP Method:** POST\n    \n\n### Description\n\nThis endpoint allows you to create a new text file dynamically. If the specified folder (`./Files`) does not exist, it will be created automatically. The file name is generated based on the current timestamp in ISO format (e.g., `2024-03-09T12-34-56.789Z.txt`).\n\n### Request Body\n\nNo request body is required for this endpoint.\n\n### Response\n\n- If the file is successfully created, the server responds with a status code **201 Created** and the message “File created successfully…”.\n- If any error occurs during file creation, the server responds with a status code **500 Internal Server Error** along with an error message.\n    \n\n### Example Usage\n\n1. Make a **POST** request to `/createFile`.\n2. Check the `./Files` folder for the newly created file.\n    \n\nEndFragment"
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/createFile",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:5000/createFile"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-zwGaDq6xUOkuHGt1D1kEMPecg20\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 10 Mar 2024 03:52:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "File created successfully..."
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/readFiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/readFiles",
+				"description": "StartFragment\n\n## Read Files Endpoint\n\n- **Endpoint Path:** `/readFiles`\n    \n- **HTTP Method:** GET\n    \n\n### Description\n\nThis endpoint allows you to retrieve a list of files within the specified folder (`./Files`). If the folder does not exist, an empty list will be returned.\n\n### Response\n\n- If the folder exists and contains files, the server responds with a status code **200 OK** and an array of file names.\n    \n- If the folder is empty or does not exist, the server responds with an empty array.\n    \n\n### Example Usage\n\n1. Make a **GET** request to `/readFiles`.\n    \n2. Receive an array of file names (if any) from the `./Files` folder.\n    \n\nEndFragment"
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/readFiles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/readFiles"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "621"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26d-3E1nToD3qd25zlAlW2T/TucVOEU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 10 Mar 2024 03:54:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Sat Mar 09 2024 18-18-25 GMT+0530 (India Standard Time).txt\",\n    \"Sat Mar 09 2024 18-25-28 GMT+0530 (India Standard Time).txt\",\n    \"Sat Mar 09 2024 19-30-31 GMT+0530 (India Standard Time).txt\",\n    \"Sat Mar 09 2024 19-31-04 GMT+0530 (India Standard Time).txt\",\n    \"Sat Mar 09 2024 19-40-51 GMT+0530 (India Standard Time).txt\",\n    \"Sat Mar 09 2024 19-42-44 GMT+0530 (India Standard Time).txt\",\n    \"Sun Mar 10 2024 08-36-56 GMT+0530 (India Standard Time).txt\",\n    \"Sun Mar 10 2024 08-39-05 GMT+0530 (India Standard Time).txt\",\n    \"Sun Mar 10 2024 08-40-50 GMT+0530 (India Standard Time).txt\",\n    \"Sun Mar 10 2024 09-22-17 GMT+0530 (India Standard Time).txt\"\n]"
+				}
+			]
+		}
+	]
+}
